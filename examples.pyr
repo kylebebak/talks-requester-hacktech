@@ -1,0 +1,21 @@
+###env
+base_url = 'https://jsonplaceholder.typicode.com'
+###env
+
+# first request
+get(base_url + '/comments')
+assert {'status_code': 200, 'encoding': 'utf-8'}
+
+# second request, with no assertion
+post(base_url + '/posts')
+
+
+## graphql
+
+requests.get('https://countries.trevorblades.com', gql="""
+{
+  countries {
+    name
+  }
+}
+""")
